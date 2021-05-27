@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: root
+    password: adobe_123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dev?&useUnicode=true&characterEncoding=utf8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      min-idle: 3
+      max-total: 8
+      max-idle: 5
+  redis:
+    database: 2
+    host: localhost
+  aop:
+    auto: true
+    proxy-target-class: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.health.app.bean
