@@ -6,7 +6,6 @@ import com.health.app.util.SnowflakeIdWorker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.InetAddress;
@@ -31,8 +30,8 @@ public class EmployeeController {
         logger.info("employee 's info ->{}",employee.toString());
         Employee newEmp = new Employee();
         newEmp.setId(snowflakeIdWorker.nextId());
-        newEmp.setName(employee.getName());
-        newEmp.setRole(employee.getRole());
+        newEmp.setUserName(employee.getUserName());
+        newEmp.setUserRole(employee.getUserRole());
         logger.info("newEmp 's info ->{}",newEmp.toString());
         return employeeService.save(newEmp);
 

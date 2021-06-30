@@ -1,17 +1,13 @@
 package com.health.app.bean;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.xml.internal.ws.developer.Serialization;
 import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@Serialization
 @Table(name = "user_employee",uniqueConstraints ={@UniqueConstraint(columnNames = "name")} )
+@NoArgsConstructor
 public class Employee {
 
     @Id
@@ -28,5 +24,6 @@ public class Employee {
         this.userName = name;
         this.userRole = role;
     }
+
 
 }
